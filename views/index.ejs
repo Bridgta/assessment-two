@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if (!todos.length) { %>
+    <h3>
+      There is nothing to...yet...but there is always something to do..so do it
+    </h3>
+    <% } else { %>
+    <ul>
+      <% todos.forEach((t) => { %>
+      <li><%= t.todo %> - <%= (t.done) ? "Done" : "Not Done" %></li>
+      <% }); %>
+    </ul>
+    <% } %>
+    <hr />
+    <form class="" action="/" method="POST">
+      <input type="text" name="todo" value="" required />
+      <button type="submit">Add</button>
+    </form>
+  </body>
+</html>
